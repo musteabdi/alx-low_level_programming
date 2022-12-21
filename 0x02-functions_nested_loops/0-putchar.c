@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success)
+ * main - primary function
+ *Description: print string "main"
+ using a while loop over the array
+ * Return: 1 if the number is positve. 0 otherwise
  */
 int main(void)
 {
