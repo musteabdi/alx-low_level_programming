@@ -1,9 +1,11 @@
+#include <stdlib.h>
+#include <time.h>
 #include <stdio.h>
 
 /**
 * main - Prints all posible different combinations of two digits
 * Return: 0
-**/
+*/
 
 int main(void)
 {

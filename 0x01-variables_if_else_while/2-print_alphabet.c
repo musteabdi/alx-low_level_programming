@@ -1,21 +1,21 @@
-
+#include <stdlib.h>
+#include <time.h>
 #include <stdio.h>
 
 /**
-* main - Prints alphabets in lowercase
-* Return: 0
-**/
+* main - Entry point
+*
+* Return: Always 0 (Success)
+*/
 
 int main(void)
 {
-	char l_letter;
+	char lowerCase;
 
-	for (l_letter = 97; l_letter <= 122; l_letter++)
+	for (lowerCase = 'a'; lowerCase <= 'z'; lowerCase++)
 	{
-		putchar(l_letter);
+		putchar(lowerCase);
 	}
-
 	putchar('\n');
-
 	return (0);
 }

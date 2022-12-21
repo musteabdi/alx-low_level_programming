@@ -1,9 +1,12 @@
+#include <stdlib.h>
+#include <time.h>
 #include <stdio.h>
 
 /**
-* main - Prints all numbers of base 10
-* Return: 0
-**/
+* main - Entry point
+*
+* Return: Always 0 (Success)
+*/
 
 int main(void)
 {

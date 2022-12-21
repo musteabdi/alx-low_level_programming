@@ -1,3 +1,5 @@
+#include <stdlib.h>
+#include <time.h>
 #include <stdio.h>
 
 /**
@@ -7,19 +9,13 @@
 
 int main(void)
 {
-	char l_letter;
-	char u_letter;
+	char letters[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	int i;
 
-	for (l_letter = 97; l_letter <= 122; l_letter++)
+	for (i = 0; i <= 51; i++)
 	{
-		putchar(l_letter);
-	}
-
-	for (u_letter = 'A'; u_letter <= 'Z'; u_letter++)
-	{
-		putchar(u_letter);
+		putchar(letters[i]);
 	}
 	putchar('\n');
-
 	return (0);
 }
