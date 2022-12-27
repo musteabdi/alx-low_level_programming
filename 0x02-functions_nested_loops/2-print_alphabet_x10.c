@@ -1,19 +1,23 @@
-#include "holberton.h"
+#include "main.h"
+
 /**
- * print_alphabet_x10 - print_alphabet
+ * print_alphabet_x10 - prints the english alphabet from a-z 10 times.
  *
- * Return:void
+ * Return: Nothing.
  */
 void print_alphabet_x10(void)
 {
-int count;
-for (count = 0; count < 10; count++)
-{
-int x;
-for (x = 'a'; x <= 'z'; x++)
-{
-_putchar(x);
-}
-_putchar('\n');
-}
+	char c = 'a';
+	int i = 0;
+
+	for (; i < 10; i++)
+	{
+		while (c <= 'z')
+		{
+			_putchar(c);
+			c++;
+		}
+		c = 'a';
+		_putchar ('\n');
+	}
 }
