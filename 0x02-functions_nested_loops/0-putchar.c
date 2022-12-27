@@ -1,23 +1,20 @@
 #include "main.h"
 
 /**
- * main - primary function
- *Description: print string "main"
- using a while loop over the array
- * Return: 1 if the number is positve. 0 otherwise
+ * main - print _putchar
+ *
+ * Return: 0
  */
 int main(void)
 {
-	int c;
-
-	char cString[10] = "putchar\n";
-
-	while (c < 10)
-	{
-		_putchar(cString[c]);
-		c++;
-	}
+	_putchar('_');
+	_putchar('p');
+	_putchar('u');
+	_putchar('t');
+	_putchar('c');
+	_putchar('h');
+	_putchar('a');
+	_putchar('r');
 	_putchar('\n');
-
 	return (0);
 }
