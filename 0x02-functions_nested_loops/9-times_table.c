@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 /**
  * times_table- print_alphabet
  * Return: 0 or 1

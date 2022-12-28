@@ -1,4 +1,5 @@
-#include "holberton.h"
+#include "main.h"
+
 /**
  * add- print_alphabet
  *@a : variable
@@ -7,7 +8,8 @@
  */
 int add(int a, int b)
 {
-int result;
-result = a + b;
-return (result);
+	int result;
+
+	result = a + b;
+	return (result);
 }
