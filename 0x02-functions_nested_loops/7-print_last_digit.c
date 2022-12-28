@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 /**
  * print_last_digit- print_alphabet
  *@x : the character
@@ -6,16 +6,16 @@
  */
 int print_last_digit(int x)
 {
-int result;
+	int result;
 
-if (x >= 0)
-{
-result = x % 10;
-}
-else
-{
-result = (x % 10) * -1;
-}
-_putchar(result + '0');
-return (result);
+	if (x >= 0)
+	{
+		result = x % 10;
+	}
+	else
+	{
+		result = (x % 10) * -1;
+	}
+	_putchar(result + '0');
+	return (result);
 }
