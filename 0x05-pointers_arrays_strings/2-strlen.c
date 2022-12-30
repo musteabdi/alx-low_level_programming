@@ -1,17 +1,17 @@
-#include "holberton.h"
 /**
- * _strlen - return the length of a string
+ * _strlen - returns the length of a string
  *
- * @s: char to check
+ * @s: string parameter input
  *
- * Description: this will return the length of a string
- * Return: 0 is success
- */
+ * Return: length of string
+*/
+
 int _strlen(char *s)
 {
-	int a = 0;
+	int counter;
 
-	for (; *s++;)
-		a++;
-	return (a);
+	for (counter = 0; *s != '\0'; ++s)
+		++counter;
+
+	return (counter);
 }
