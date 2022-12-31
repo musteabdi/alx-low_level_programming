@@ -1,26 +1,31 @@
-#include "holberton.h"
 /**
- * *_strncat - appends the src string to the dest string
+ * _strncat - a function that concatenates two strings.
  *
- * @dest: char to check
- * @src: char to check
- * @n: number of bytes from src
- * Description: This will append the src string to the dest string
- * Return: a pointer to the resulting string dest
- */
+ * @dest: pointer to destination input
+ * @src: pointer to source input
+ * @n: most number of bytes from @src
+ *
+ * Return: @dest
+*/
+
 char *_strncat(char *dest, char *src, int n)
 {
-	int a, b, largosrc;
+	int c, i;
 
-	for (a = 0; dest[a] != '\0'; a++)
-	{
-	}
-	for (largosrc = 0; src[largosrc] != 0; largosrc++)
-	{
-	}
-	for (b = 0; b < n && b < largosrc; b++, a++)
-	{
-		dest[a] = src[b];
-	}
+	c = 0;
+
+	/*find size of dest array*/
+	while (dest[c])
+		c++;
+
+	/**
+	 * src does not need to be null terminated
+	 * if it contains n or more bytes
+	*/
+	for (i = 0; i < n && src[i] != '\0'; i++)
+		dest[c + i] = src[i];
+	/*null terminate dest*/
+	dest[c + i] = '\0';
+
 	return (dest);
 }

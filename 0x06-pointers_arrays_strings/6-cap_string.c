@@ -1,35 +1,44 @@
-#include "holberton.h"
 /**
- * *cap_string - capitalizes all words of a string
+ * cap_string - a function that capitalizes
+ *              all words of a string
  *
- * @a: int to check
+ * @s: pointer to char input array
  *
- * Return: 0 is success
- */
-char *cap_string(char *a)
-{
-	int x;
+ * Return: @s
+*/
 
-	for (x = 0; a[x] != '\0'; x++)
+char *cap_string(char *s)
+{
+	int i = 0;
+
+	/*iterate through our array values*/
+	while (s[i] != '\0')
 	{
-		if (x == 0)
+		/*check for any lowercase letters*/
+		if (s[i] >= 97 && s[i] <= 122)
 		{
-		if (a[x] >= 'a' && a[x] <= 'z')
-		{
-			a[x] = a[x] - 32;
-		}
-		}
-		if (a[x] == ' ' || a[x] == '\n' || a[x] == ','
-		    || a[x] == '\t' || a[x] == ';' || a[x] == '.'
-		    || a[x] == '!' || a[x] == '?'
-		    || a[x] == '"' || a[x] == '(' || a[x] == ')'
-		    || a[x] == '{' || a[x] == '}')
-		{
-			if (a[x + 1] >= 'a' && a[x + 1] <= 'z')
+			/**
+			 * if we have a null character
+			 * change its value to capital
+			*/
+			if (i == 0)
 			{
-				a[x + 1] = a[x + 1] - 32;
+				s[i] -= 32;
+			}
+			/**
+			 * if we find any character matching the below before any small
+			 * letter we change that value to a capital letter.
+			*/
+			if (s[i - 1] == 32 || s[i - 1] == 9 || s[i - 1] == 10 ||
+				s[i - 1] == 44 || s[i - 1] == 59 || s[i - 1] == 46 ||
+				s[i - 1] == 33 || s[i - 1] == 63 || s[i - 1] == 34 ||
+				s[i - 1] == 40 || s[i - 1] == 41 || s[i - 1] == 123 ||
+				s[i - 1] == 124)
+			{
+				s[i] -= 32;
 			}
 		}
+		i++;
 	}
-		return (a);
+	return (s);
 }
