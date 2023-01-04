@@ -21,7 +21,6 @@ else if (s[i] == s[size])
 {
 return (check(s, i + 1, size - 1, add));
 }
-
 return (0);
 }
 
