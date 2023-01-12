@@ -1,1 +1,1 @@
-This Is My First C language Project
+this is the debug project tutorial
