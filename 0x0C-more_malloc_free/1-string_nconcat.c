@@ -1,51 +1,51 @@
+#include "holberton.h"
 #include <stdlib.h>
-
+#include <stdio.h>
 /**
- * string_nconcat - function that concatenates two strings
+ * string_nconcat - concatenate two strings
  *
- * @s1: string 1
- * @s2: string 2
- * @n: bytes of @s2 to add to @s1 to be a new string
+ * @s1: is a pointer to the first string
+ * @s2: is a pointer to the second string
+ * @n: an integer (6) with the limit of what we are going to add to s1
  *
- * Return: new string followed by the first @n bytes
- *         of string 2 @s2 or NULL
-*/
-
+ * Return: pointer to a newlly allocated memory with s1 & s2, NULL if it fail
+ */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int l1, l2, i, j;
-	char *str;
+	/* unsigned int var because we need to compare with n */
+	char *strings;
+	unsigned int lengths1, lengths2;
 
-	/*treat NULL as empty string*/
+	/* task condition if NULL passed, should be treated as empty string */
+	/* same condition of project 0x0B 2-str.concatena */
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-
-	l1 = l2 = 0;
-	/*length of both s1 & s2 respectively*/
-	while (s1[l1] != '\0')
-		l1++;
-	while (s2[l2] != '\0')
-		l2++;
-
-	/*set n to length of s2*/
-	if (n >= l2)
-		n = l2;
-
-	str = (char *) malloc((l1 + n + 1) * sizeof(char));
-	if (str == NULL)
-		return (NULL);
-
-	/*add s1 to str*/
-	for (i = 0; s1[i] != '\0'; i++)
-		str[i] = s1[i];
-	/*add s2 n bytes to str*/
-	for (j = 0; j < n && s2[j] != '\0'; j++)
+	/* I go through both strings so I can find their length */
+	for (lengths1 = 0; s1[lengths1] != '\0'; lengths1++)
 	{
-		str[i] = s2[j];
-		i++;
 	}
-	str[i] = '\0';
-	return (str);
+	for (lengths2 = 0; s2[lengths2] != '\0'; lengths2++)
+	{
+	}
+	/* Now that I know the length of s2 I can compare it with n */
+	/* and set the task condition */
+	if (n > lengths2)
+		n = lengths2;
+	/* now set the malloc with the lenghts */
+	/* n is now equal to lengths2 */
+	/* plus 1 because we need to save space for the last '\0' of strings */
+	strings = malloc((lengths1 + n + 1) * sizeof(char));
+	if (strings == NULL)
+		return (NULL);
+	/* now we add the content of strings to new strings pointer */
+	for (lengths1 = 0; s1[lengths1] != '\0'; lengths1++)
+		strings[lengths1] = s1[lengths1];
+	/* iterate while lengths2 < n so we print only school */
+	/* lenghts1 keeps counting while we go trough s2 */
+	for (lengths2 = 0; lengths2 < n; lengths2++, lengths1++)
+	strings[lengths1] = s2[lengths2];
+	strings[lengths1] = '\0';
+	return (strings);
 }
